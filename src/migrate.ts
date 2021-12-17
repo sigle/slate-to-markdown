@@ -78,6 +78,6 @@ const migrateNode = (oldNode: any) => {
   }
 };
 
-export const migrateSchema = (oldSchema: any) => {
-  return oldSchema.document.nodes.map(migrateNode);
+export const migrateSchema = (nodes: any) => {
+  return nodes.map(migrateNode);
 };

@@ -7,9 +7,9 @@ This package converts a Sigle story Slate 0.47 JSON representation to a Markdown
 ```ts
 import { convert } from '@sigle/slate-to-markdown';
 
-const slateJSON = {
-  // ... Slate Sigle JSON
-};
+const slateJSON = [
+  // ... Slate Sigle nodes JSON
+];
 
 const markdown = convert(slateJSON);
 ```
