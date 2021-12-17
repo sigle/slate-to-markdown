@@ -7,20 +7,34 @@
   "types": "./lib/index.d.ts",
   "license": "MIT",
   "scripts": {
+    "prettier": "prettier --write '**/*.{json,md,js,ts,jsx,tsx,yml,css}'",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "husky install"
   },
   "files": [
     "src",
     "lib"
   ],
+  "prettier": {
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{json,md,js,ts,jsx,tsx,yml,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "remark-slate": "1.8.0"
   },
   "devDependencies": {
     "@types/jest": "27.0.3",
     "@types/node": "17.0.0",
+    "husky": "7.0.2",
     "jest": "27.4.5",
+    "lint-staged": "11.2.3",
+    "prettier": "2.4.1",
     "ts-jest": "27.1.2",
     "typescript": "4.5.4"
   }
