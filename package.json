@@ -11,7 +11,7 @@
     "build": "tsc",
     "test": "jest",
     "release": "pnpm run build && pnpx changeset publish",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "publishConfig": {
     "access": "public"
