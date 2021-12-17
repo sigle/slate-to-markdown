@@ -16,6 +16,7 @@ const migrateTextNode = (oldNode: any) => {
     ...oldNode.marks?.reduce(
       (acc: any, mark: any) => ({
         ...acc,
+        // This is needed as it's not possible to customize via the remark-slate options https://github.com/hanford/remark-slate/issues/49
         [mark.type === 'underlined' ? 'strikeThrough' : mark.type]: true,
       }),
       {}

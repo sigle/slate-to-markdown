@@ -7,8 +7,6 @@ export const convert = (value: any): string => {
       serialize(v, {
         nodeTypes: {
           ...defaultNodeTypes,
-          // TODO not working
-          // delete_mark: 'underlined',
           block_quote: 'block-quote',
           ol_list: 'numbered-list',
           ul_list: 'bulleted-list',
