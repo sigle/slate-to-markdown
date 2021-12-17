@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render all marks text 1`] = `
+"Hello ~~***bold, italic, underlined***~~ hello
+"
+`;
+
+exports[`render bold text 1`] = `
+"Hello **bold** hello
+"
+`;
+
+exports[`render code text 1`] = `
+"Hello \`code\` hello
+"
+`;
+
+exports[`render italic text 1`] = `
+"Hello _italic_ hello
+"
+`;
+
+exports[`render text 1`] = `
+"Hello
+"
+`;
+
+exports[`render underlined text 1`] = `
+"Hello ~~underlined~~ hello
+"
+`;
