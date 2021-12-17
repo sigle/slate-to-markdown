@@ -2,4 +2,4 @@
 '@sigle/slate-to-markdown': patch
 ---
 
-Fix installation postinstall script
+Fix `postinstall` script breaking current installation.
