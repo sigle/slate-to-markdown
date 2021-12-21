@@ -30,7 +30,7 @@
     ]
   },
   "dependencies": {
-    "@sigle/remark-slate": "1.8.1"
+    "remark-slate": "1.8.2"
   },
   "devDependencies": {
     "@types/jest": "27.0.3",
