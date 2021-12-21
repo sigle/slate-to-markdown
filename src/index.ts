@@ -1,4 +1,4 @@
-import { serialize, defaultNodeTypes } from '@sigle/remark-slate';
+import { serialize, defaultNodeTypes } from 'remark-slate';
 import { migrateSchema } from './migrate';
 
 export const convert = (value: any): string => {
