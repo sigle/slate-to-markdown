@@ -1,3 +1,4 @@
+import { Value, Text } from 'slate';
 /**
  * Inspired by https://gist.github.com/webel/545f229fe79c2176dbaed9023de46e12
  *
@@ -78,6 +79,25 @@ const migrateNode = (oldNode: any) => {
   }
 };
 
+/**
+ * Migration of data < slate 0.46, remove the leaves property which has been
+ * removed in 0.46.
+ * For performance, only call Slate if the leaves property is detected.
+ */
+const removeLeaves = (oldNode: any) => {
+  const hasLeaves = oldNode.nodes.findIndex((node: any) => node.leaves) !== -1;
+  return hasLeaves;
+};
+
 export const migrateSchema = (nodes: any) => {
+  const hasLeaves =
+    nodes.findIndex((node: any) => removeLeaves(node) === true) !== -1;
+  if (hasLeaves) {
+    // Using Slate to migrate the schema to the latest version
+    nodes = Value.fromJSON({
+      object: 'value',
+      document: { object: 'document', data: {}, nodes },
+    }).toJSON().document?.nodes;
+  }
   return nodes.map(migrateNode);
 };

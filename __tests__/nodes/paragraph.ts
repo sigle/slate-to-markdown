@@ -197,3 +197,30 @@ it('render code text', () => {
   ];
   expect(convert(slateJSON)).toMatchSnapshot();
 });
+
+/**
+ * slate < 0.46
+ */
+
+it('render slate < 0.46 text', () => {
+  const slateJSON = [
+    {
+      object: 'block',
+      type: 'paragraph',
+      data: {},
+      nodes: [
+        {
+          object: 'text',
+          leaves: [
+            {
+              object: 'leaf',
+              text: 'Hello',
+              marks: [],
+            },
+          ],
+        },
+      ],
+    },
+  ];
+  expect(convert(slateJSON)).toMatchSnapshot();
+});
