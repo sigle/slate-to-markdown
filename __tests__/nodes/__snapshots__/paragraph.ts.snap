@@ -1,5 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`merge slate < 0.46 text with mark 1`] = `
+"Of course, you can edit your text at any moment and make it **bold**, _italic_ or ~~underlined~~.
+"
+`;
+
 exports[`render all marks text 1`] = `
 "Hello ~~***bold, italic, underlined***~~ hello
 "
@@ -17,6 +22,11 @@ exports[`render code text 1`] = `
 
 exports[`render italic text 1`] = `
 "Hello _italic_ hello
+"
+`;
+
+exports[`render slate < 0.46 text 1`] = `
+"Hello
 "
 `;
 

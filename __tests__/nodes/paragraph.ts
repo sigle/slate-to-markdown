@@ -197,3 +197,101 @@ it('render code text', () => {
   ];
   expect(convert(slateJSON)).toMatchSnapshot();
 });
+
+/**
+ * slate < 0.46
+ */
+
+it('render slate < 0.46 text', () => {
+  const slateJSON = [
+    {
+      object: 'block',
+      type: 'paragraph',
+      data: {},
+      nodes: [
+        {
+          object: 'text',
+          leaves: [
+            {
+              object: 'leaf',
+              text: 'Hello',
+              marks: [],
+            },
+          ],
+        },
+      ],
+    },
+  ];
+  expect(convert(slateJSON)).toMatchSnapshot();
+});
+
+it('merge slate < 0.46 text with mark', () => {
+  const slateJSON = [
+    {
+      object: 'block',
+      type: 'paragraph',
+      data: {},
+      nodes: [
+        {
+          object: 'text',
+          leaves: [
+            {
+              object: 'leaf',
+              text: 'Of course, you can edit your text at any moment and make it ',
+              marks: [],
+            },
+            {
+              object: 'leaf',
+              text: 'bold',
+              marks: [
+                {
+                  object: 'mark',
+                  type: 'bold',
+                  data: {},
+                },
+              ],
+            },
+            {
+              object: 'leaf',
+              text: ', ',
+              marks: [],
+            },
+            {
+              object: 'leaf',
+              text: 'italic',
+              marks: [
+                {
+                  object: 'mark',
+                  type: 'italic',
+                  data: {},
+                },
+              ],
+            },
+            {
+              object: 'leaf',
+              text: ' or ',
+              marks: [],
+            },
+            {
+              object: 'leaf',
+              text: 'underlined',
+              marks: [
+                {
+                  object: 'mark',
+                  type: 'underlined',
+                  data: {},
+                },
+              ],
+            },
+            {
+              object: 'leaf',
+              text: '.',
+              marks: [],
+            },
+          ],
+        },
+      ],
+    },
+  ];
+  expect(convert(slateJSON)).toMatchSnapshot();
+});
