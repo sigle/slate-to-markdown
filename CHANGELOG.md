@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.3.0
+
+### Minor Changes
+
+- [#9](https://github.com/sigle/slate-to-markdown/pull/9) [`a432b9b`](https://github.com/sigle/slate-to-markdown/commit/a432b9babf46abbeb3a34a6b923458fdbab7b271) Thanks [@pradel](https://github.com/pradel)! - Publish as commonjs.
+
 ## 0.2.0
 
 ### Minor Changes
