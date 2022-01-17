@@ -35,7 +35,7 @@ const migrateLinkNode = (node: any) => {
 
 const migrateImageNode = (node: any) => {
   return {
-    link: node.data.src,
+    link: node.data.src ? encodeURI(node.data.src) : '',
     caption: '',
     type: node.type,
     children: [],

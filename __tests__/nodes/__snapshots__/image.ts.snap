@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`encode image url 1`] = `"![](https://gaia.blockstack.org/hub/18D2Jwi8xaF9k1natrajDSsg7gUmr3KQGw/photos/rpO_vXV7gOCRm2nXOmvEB/Yui0XyebIsqGYuwrf8R_J-Screenshot%202020-04-06%20at%2010.46.03.png)"`;
+
 exports[`render image 1`] = `"![](https://gaia.blockstack.org/hub/18D2Jwi8xaF9k1natrajDSsg7gUmr3KQGw/photos/eEb-WTOLPe24j7x8pM5Mm/pWhvyVS2N1vYqHEnFHFxz-Leo.png)"`;
