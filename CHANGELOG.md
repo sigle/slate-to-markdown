@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.2.0
+
+### Minor Changes
+
+- [#7](https://github.com/sigle/slate-to-markdown/pull/7) [`b704f2b`](https://github.com/sigle/slate-to-markdown/commit/b704f2b6acfbc279afd585f8fbbcde61ad0b242f) Thanks [@pradel](https://github.com/pradel)! - Set type to module in package.json file.
+
 ## 0.1.2
 
 ### Patch Changes
