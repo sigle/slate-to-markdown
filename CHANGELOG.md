@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.4.0
+
+### Minor Changes
+
+- [#13](https://github.com/sigle/slate-to-markdown/pull/13) [`20df8a0`](https://github.com/sigle/slate-to-markdown/commit/20df8a0b71001ef1a01ff567940a23f266ee43ac) Thanks [@pradel](https://github.com/pradel)! - Add support to slate schema < 0.46 by migrating the leaves properties.
+
 ## 0.3.1
 
 ### Patch Changes
