@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.3.1
+
+### Patch Changes
+
+- [#11](https://github.com/sigle/slate-to-markdown/pull/11) [`f8bec6d`](https://github.com/sigle/slate-to-markdown/commit/f8bec6dada92eaa949ee43ed95db7d4d5b0fc608) Thanks [@pradel](https://github.com/pradel)! - Encode image urls.
+
 ## 0.3.0
 
 ### Minor Changes
