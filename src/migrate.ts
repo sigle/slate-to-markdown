@@ -85,19 +85,18 @@ const migrateNode = (oldNode: any) => {
  * For performance, only call Slate if the leaves property is detected.
  */
 const removeLeaves = (oldNode: any) => {
-  const hasLeaves = oldNode.nodes.findIndex((node: any) => node.leaves) !== -1;
-  return hasLeaves;
+  let newNodes: any[] = [];
+  oldNode.nodes.forEach((node: any) => {
+    if (node.leaves) {
+      newNodes = newNodes.concat(Text.createList(node.leaves).toArray());
+      return;
+    }
+    newNodes.push(node);
+  });
+  oldNode.nodes = newNodes;
+  return oldNode;
 };
 
 export const migrateSchema = (nodes: any) => {
-  const hasLeaves =
-    nodes.findIndex((node: any) => removeLeaves(node) === true) !== -1;
-  if (hasLeaves) {
-    // Using Slate to migrate the schema to the latest version
-    nodes = Value.fromJSON({
-      object: 'value',
-      document: { object: 'document', data: {}, nodes },
-    }).toJSON().document?.nodes;
-  }
-  return nodes.map(migrateNode);
+  return nodes.map(removeLeaves).map(migrateNode);
 };
