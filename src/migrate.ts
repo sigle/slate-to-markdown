@@ -134,7 +134,6 @@ const fixNewLineTitle = (oldNode: any) => {
 };
 
 export const migrateSchema = (nodes: any) => {
-  // TODO for performance, we should only call this if the schema contains leaves
   nodes = nodes.map(fixNewLineTitle);
   return nodes.map(removeLeaves).map(migrateNode);
 };
