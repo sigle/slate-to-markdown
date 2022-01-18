@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.4.1
+
+### Patch Changes
+
+- [#15](https://github.com/sigle/slate-to-markdown/pull/15) [`1c10ec6`](https://github.com/sigle/slate-to-markdown/commit/1c10ec6d9cdabcf3761d91988f4ce16e43331648) Thanks [@pradel](https://github.com/pradel)! - Fix more leaves migration issues.
+
 ## 0.4.0
 
 ### Minor Changes
