@@ -87,12 +87,35 @@ const migrateNode = (oldNode: any) => {
 const removeLeaves = (oldNode: any) => {
   let newNodes: any[] = [];
   oldNode.nodes.forEach((node: any) => {
-    if (node.leaves) {
-      newNodes = newNodes.concat(Text.createList(node.leaves).toArray());
+    // Inline can contain an array of node that needs to be migrated
+    if (node.object === 'inline' && node.nodes) {
+      newNodes.push(removeLeaves(node));
       return;
+    } else if (node.object === 'text' && node.leaves) {
+      newNodes = newNodes.concat(
+        Text.createList(node.leaves)
+          .toArray()
+          .map((data) => data.toJSON())
+      );
+      return;
+    } else {
+      newNodes.push(node);
     }
-    newNodes.push(node);
   });
+  console.log(
+    JSON.stringify(oldNode.nodes, null, 2),
+    JSON.stringify(newNodes, null, 2),
+    JSON.stringify(
+      (
+        Value.fromJSON({
+          object: 'value',
+          document: { object: 'document', data: {}, nodes: [oldNode] },
+        }).toJSON() as any
+      ).document!.nodes![0]!.nodes,
+      null,
+      2
+    )
+  );
   oldNode.nodes = newNodes;
   return oldNode;
 };
