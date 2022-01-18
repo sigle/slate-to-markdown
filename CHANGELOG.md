@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.4.2
+
+### Patch Changes
+
+- [#17](https://github.com/sigle/slate-to-markdown/pull/17) [`13f4986`](https://github.com/sigle/slate-to-markdown/commit/13f4986a571b7d4438bc11eb016fae75d12e8c60) Thanks [@pradel](https://github.com/pradel)! - Fix titles containing a new line.
+
 ## 0.4.1
 
 ### Patch Changes
