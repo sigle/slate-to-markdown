@@ -91,22 +91,49 @@ const removeLeaves = (oldNode: any) => {
     if ((node.object === 'inline' || node.object === 'block') && node.nodes) {
       newNodes.push(removeLeaves(node));
       return;
-    } else if (node.object === 'text' && node.leaves) {
+    }
+
+    if (node.object === 'text' && node.leaves) {
       newNodes = newNodes.concat(
         Text.createList(node.leaves)
           .toArray()
           .map((data) => data.toJSON())
       );
       return;
-    } else {
-      newNodes.push(node);
     }
+
+    newNodes.push(node);
   });
 
   oldNode.nodes = newNodes;
   return oldNode;
 };
 
+/**
+ * Remove the new line char that can be in the titles as it can break the markdown.
+ */
+const fixNewLineTitle = (oldNode: any) => {
+  if (
+    oldNode.object === 'block' &&
+    (oldNode.type === 'heading-one' ||
+      oldNode.type === 'heading-two' ||
+      oldNode.type === 'heading-three')
+  ) {
+    oldNode.nodes = oldNode.nodes.map((node: any) =>
+      node.leaves
+        ? {
+            ...node,
+            leaves: node.leaves.map((leaf: any) =>
+              leaf.text.replace(/^\n/, '')
+            ),
+          }
+        : node
+    );
+  }
+  return oldNode;
+};
+
 export const migrateSchema = (nodes: any) => {
+  nodes = nodes.map(fixNewLineTitle);
   return nodes.map(removeLeaves).map(migrateNode);
 };
