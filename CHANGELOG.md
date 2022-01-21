@@ -1,5 +1,11 @@
 # @sigle/slate-to-markdown
 
+## 0.4.3
+
+### Patch Changes
+
+- [#19](https://github.com/sigle/slate-to-markdown/pull/19) [`b7cefb3`](https://github.com/sigle/slate-to-markdown/commit/b7cefb3347c9d8c107d195e30dd1d133e9f9a507) Thanks [@pradel](https://github.com/pradel)! - Remove underline support to follow Markdown spec.
+
 ## 0.4.2
 
 ### Patch Changes
