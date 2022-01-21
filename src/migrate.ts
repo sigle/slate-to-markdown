@@ -1,4 +1,4 @@
-import { Value, Text } from 'slate';
+import { Text } from 'slate';
 /**
  * Inspired by https://gist.github.com/webel/545f229fe79c2176dbaed9023de46e12
  *
@@ -17,8 +17,7 @@ const migrateTextNode = (oldNode: any) => {
     ...oldNode.marks?.reduce(
       (acc: any, mark: any) => ({
         ...acc,
-        // This is needed as it's not possible to customize via the remark-slate options https://github.com/hanford/remark-slate/issues/49
-        [mark.type === 'underlined' ? 'strikeThrough' : mark.type]: true,
+        [mark.type]: true,
       }),
       {}
     ),
